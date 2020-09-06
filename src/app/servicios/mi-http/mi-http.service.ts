@@ -32,12 +32,13 @@ export class MiHttpService {
     });
   }
 
-  public httpGetO ( url: string): Observable<Response>
-  {
-    return this.http.get( url )
-      .map( ( res: Response ) => res.json())
-      .catch( ( err: any ) => Observable.throw(err.json().error || 'Server error'));
-  }
+  // public httpGetO ( url: string) : Observable<Response>
+  // {
+  //   return this.http.get( url )
+  //     .map( ( res: Response ) => res.json())
+  //     .catch( ( err: any ) => Observable.throw(err.json().error || 'Server error'));
+  //   return null;
+  // }
 
 
   private extractData ( res: Response )
