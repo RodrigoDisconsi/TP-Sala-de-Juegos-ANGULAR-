@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import {Subscription} from "rxjs";
@@ -10,7 +11,12 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 })
 export class LoginComponent implements OnInit {
 
+  private isValidUser;
   private subscription: Subscription;
+  loginForm = this.fb.group({
+    username: ['username', Validators.required],
+    password: ['password', [Validators.required, Validators.minLength(6)]],
+  });
   usuario = '';
   clave= '';
   progreso: number;
@@ -19,10 +25,11 @@ export class LoginComponent implements OnInit {
   ProgresoDeAncho:string;
 
   clase="progress-bar progress-bar-info progress-bar-striped ";
-
+ 
   constructor(
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    private fb: FormBuilder) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
 
@@ -76,6 +83,26 @@ export class LoginComponent implements OnInit {
       }     
     });
     //this.logeando=true;
+  }
+
+  onLogin(): void{
+
+  }
+
+  getErrorMessage(field:string): string{
+    let retorno;
+    if(this.loginForm.get(field).errors.required){
+        retorno = "Campo vacío."
+    }
+    else if (this.loginForm.get(field).hasError("minLength")){
+      retorno = "Error. Mínimo de carácteres 6";
+    }
+    return retorno;
+  }
+
+  isValidField(field:string): boolean{
+    return (this.loginForm.get(field).touched || this.loginForm.get(field).dirty) 
+    && !this.loginForm.get(field).valid;
   }
 
 }

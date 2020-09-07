@@ -21,7 +21,7 @@
     </div>
   </div>
 </div-->
- <div class="container" >
+ <!-- <div class="container" >
   <div class="jumbotron" style="padding:50px;">
     <form action="return true;">
       <div class="imgcontainer">
@@ -54,4 +54,41 @@
      
     </form>
   </div>
+</div> -->
+
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <h1>LOGIN</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <mat-form-field class="full-width-input">
+        <input type="text"
+               class="form-control"
+               formControlName="username"
+               matInput 
+               placeholder="Nombre de usuario"
+               required
+        />
+        <mat-error *ngIf="isValidField('username')">
+          {{getErrorMessage('username')}}
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="full-width-input separator">
+        <input type="password"
+               class="form-control"
+               formControlName="password" 
+               matInput 
+               placeholder="Password"
+               required
+        /> 
+        <mat-error *ngIf="isValidField('password')">
+          {{getErrorMessage('password')}}
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <button type="submit" mat-raised-button color="primary">Ingresar</button>
+    </form>
+    </mat-card-content>
+  </mat-card>
 </div>
