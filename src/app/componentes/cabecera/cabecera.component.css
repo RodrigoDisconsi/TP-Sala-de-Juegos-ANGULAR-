@@ -47,3 +47,7 @@ color: white;
     color: white !important;
     text-decoration: unset;
 }
+
+span{
+    cursor: pointer;
+}

@@ -67,6 +67,9 @@ span.psw {
        width: 100%;
     }
 } */ 
+h1{
+    text-align: center;
+}
 
 mat-card{
     width: 50%;
@@ -76,4 +79,12 @@ mat-card{
 .container{
     display: flex;
     justify-content: center;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+button{
+    width: 100%;
 }
