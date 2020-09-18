@@ -20,7 +20,6 @@ import{ ArchivosJugadoresService} from './servicios/archivos-jugadores.service';
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
-import { MenuComponent } from './componentes/menu/menu.component';
 import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
 import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { RuteandoModule } from './ruteando/ruteando.module';
@@ -46,7 +45,6 @@ import { ListadosComponent } from './componentes/listados/listados.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
-import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { ListadoDePaisesComponent } from './componentes/listado-de-paises/listado-de-paises.component';
@@ -65,7 +63,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PrincipalComponent,
     LoginComponent,
     AgilidadAritmeticaComponent,
-    MenuComponent,
     AdivinaMasListadoComponent,
     AgilidadMasListadoComponent,
     ListadoComponent,
@@ -73,7 +70,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     JuegosComponent,
     RegistroComponent,
     MenuCardComponent,
-    CabeceraComponent,
     QuienSoyComponent,
     AnagramaComponent,
     ListadoDePaisesComponent,

@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatCardModule,
     MatListModule,
     MatDividerModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatGridListModule
   ],
   exports: [
     MatToolbarModule,
@@ -36,7 +38,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatGridListModule
   ],
   providers: [ ]
 })
