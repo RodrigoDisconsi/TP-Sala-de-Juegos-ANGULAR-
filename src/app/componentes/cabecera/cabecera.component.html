@@ -11,21 +11,52 @@
   </ul>
 </div> -->
 
+  <mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="side" position="start">
+      <h2>MENU</h2>
+      <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item>
+          <button id="juegos" mat-icon-button [routerLink]="['/Juegos']">
+              <mat-icon>games</mat-icon>
+          </button>
+          <label for="juegos">JUEGOS</label>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <button id="listResult" mat-icon-button [routerLink]="['/Listado']">
+            <mat-icon>list</mat-icon>
+        </button>
+        <label for="listResult">LISTADO DE RESULTADOS</label>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <button id="config" mat-icon-button [routerLink]="['/Juegos']">
+            <mat-icon>settings</mat-icon>
+        </button>
+        <label for="config">CONFIGURACIÓN</label>
+        </mat-list-item>
+        <mat-list-item>
+          <button id="jugadores" mat-icon-button [routerLink]="['/Jugadores']">
+            <mat-icon>supervisor_account</mat-icon>
+        </button>
+        <label for="jugadores">JUGADORES</label>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span [routerLink]="['/']">SALA DE JUEGOS</span>
+        <a mat-button [routerLink]="['/QuienSoy']">Quién soy?</a>
+        <span class="example-spacer"></span>
+        <a href="https://github.com/rodrigodisconsi" mat-button class="fa fa-github"></a>
+        <a mat-button routerLink="/Login"><mat-icon>account_circle</mat-icon></a>
+      </mat-toolbar>
+      <br>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
-
-<p>
-  <mat-toolbar color="primary">
-    <mat-icon>api</mat-icon>
-    <span [routerLink]="['/']">SALA DE JUEGOS</span>
-    <a mat-button [routerLink]="['/QuienSoy']">Quién soy?</a>
-    <span class="example-spacer"></span>
-    <!-- <button mat-icon-button class="fa fa-github" aria-label="Example icon-button with heart icon">
-      <a href="https://github.com/rodrigodisconsi"></a>
-   </button> -->
-   <a href="https://github.com/rodrigodisconsi" mat-button class="fa fa-github"></a>
-    <!-- <button mat-button class="example-icon" >
-      <mat-icon>account_circle</mat-icon>
-    </button> -->
-    <a mat-button routerLink="/Login"><mat-icon>account_circle</mat-icon></a>
-  </mat-toolbar>
-</p>
