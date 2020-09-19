@@ -100,7 +100,7 @@ export class LoginComponent implements OnInit {
     return retorno;
   }
 
-  isValidField(field:string): boolean{
+  isNotValidField(field:string): boolean{
     return (this.loginForm.get(field).touched || this.loginForm.get(field).dirty) 
     && !this.loginForm.get(field).valid;
   }

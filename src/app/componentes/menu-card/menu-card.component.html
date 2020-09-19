@@ -39,21 +39,85 @@
     </div>
   </div> -->
 
-<mat-grid-list cols="3" rowHeight="2:2">
-  <mat-grid-tile>
-    <mat-grid-tile-header>
-      Adivina el número
-    </mat-grid-tile-header>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-grid-tile-header>
-      Juego de agilidad mental
-    </mat-grid-tile-header>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-grid-tile-header>
-      Piedra papel o tijera
-    </mat-grid-tile-header>
-  </mat-grid-tile>
-</mat-grid-list>
-      
+
+  <mat-grid-list cols="3" rowHeight="3:2" gutterSize="5vh">
+    <mat-grid-tile [style.border]="'3px inset'" [style.borderRadius]="'16px'">
+  
+      <img class="imagen" src="../../../assets/imagenes/adivina.png">
+  
+      <mat-grid-tile-header [style.background]="'white'">
+        Adivina el número
+      </mat-grid-tile-header>
+  
+      <mat-grid-tile-footer [style.background]="'white'">
+        <button class="btn-jugar" mat-raised-button>JUGAR</button>
+      </mat-grid-tile-footer>
+  
+    </mat-grid-tile>
+    <mat-grid-tile [style.border]="'3px inset'" [style.borderRadius]="'16px'">
+  
+      <img class="imagen" src="../../../assets/imagenes/cerebro.jpg">
+  
+      <mat-grid-tile-header [style.background]="'white'">
+        Juego de agilidad mental
+      </mat-grid-tile-header>
+  
+      <mat-grid-tile-footer [style.background]="'white'">
+        <button class="btn-jugar" mat-raised-button>JUGAR</button>
+      </mat-grid-tile-footer>
+  
+    </mat-grid-tile>
+    <mat-grid-tile [style.border]="'3px inset'" [style.borderRadius]="'16px'">
+  
+      <img class="imagen" src="../../../assets/imagenes/ppt.jpg">
+  
+      <mat-grid-tile-header [style.background]="'white'">
+        Piedra papel o tijera
+      </mat-grid-tile-header>
+  
+      <mat-grid-tile-footer [style.background]="'white'">
+        <button class="btn-jugar" mat-raised-button>JUGAR</button>
+      </mat-grid-tile-footer>
+  
+    </mat-grid-tile>
+    <mat-grid-tile [style.border]="'3px inset'" [style.borderRadius]="'16px'">
+  
+      <!-- <img class="imagen" src="../../../assets/imagenes/ppt.jpg"> -->
+  
+      <mat-grid-tile-header [style.background]="'white'">
+        Anagrama
+      </mat-grid-tile-header>
+  
+      <mat-grid-tile-footer [style.background]="'white'">
+        <button class="btn-jugar" mat-raised-button>JUGAR</button>
+      </mat-grid-tile-footer>
+  
+    </mat-grid-tile>
+    <mat-grid-tile [style.border]="'3px inset'" [style.borderRadius]="'16px'">
+  
+      <img class="imagen" src="../../../assets/imagenes/Tic_tac_toe.svg">
+  
+      <mat-grid-tile-header [style.background]="'white'">
+        TaTeTi
+      </mat-grid-tile-header>
+  
+      <mat-grid-tile-footer [style.background]="'white'">
+        <button class="btn-jugar" mat-raised-button>JUGAR</button>
+      </mat-grid-tile-footer>
+  
+    </mat-grid-tile>
+    <mat-grid-tile [style.border]="'3px inset'" [style.borderRadius]="'16px'">
+  
+      <img class="imagen" src="../../../assets/imagenes/ppt.jpg">
+  
+      <mat-grid-tile-header [style.background]="'white'">
+        Memotest
+      </mat-grid-tile-header>
+  
+      <mat-grid-tile-footer [style.background]="'white'">
+        <button class="btn-jugar" mat-raised-button>JUGAR</button>
+      </mat-grid-tile-footer>
+  
+    </mat-grid-tile>
+  </mat-grid-list>
+  

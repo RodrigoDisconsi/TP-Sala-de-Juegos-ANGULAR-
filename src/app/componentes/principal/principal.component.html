@@ -36,7 +36,7 @@
         <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
-        <span [routerLink]="['/']">SALA DE JUEGOS</span>
+        <span [routerLink]="['/']" (click)="checkSidenav(sidenav)">SALA DE JUEGOS</span>
         <a mat-button [routerLink]="['/QuienSoy']">Quién soy?</a>
         <span class="example-spacer"></span>
         <a href="https://github.com/rodrigodisconsi" mat-button class="fa fa-github"></a>

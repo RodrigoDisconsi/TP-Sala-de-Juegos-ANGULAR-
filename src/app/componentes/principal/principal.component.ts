@@ -13,6 +13,10 @@ export class PrincipalComponent implements OnInit {
   ngOnInit() {
   }
 
- 
+ checkSidenav(sidenav){
+   if(sidenav._animationState == "open"){
+     sidenav.toggle()
+   }
+ }
 
 }
