@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   private isValidUser;
   private subscription: Subscription;
   loginForm = this.fb.group({
-    username: ['username', Validators.required],
-    password: ['password', [Validators.required, Validators.minLength(6)]],
+    username: ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength(6)]],
   });
   usuario = '';
   clave= '';

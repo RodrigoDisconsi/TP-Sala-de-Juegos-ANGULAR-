@@ -11,6 +11,7 @@
     text-decoration: unset;
 }
 
+
 span{
     cursor: pointer;
 }
@@ -30,8 +31,30 @@ label{
     color: white;
     text-align: center;
     padding-top: 1vh;
+    cursor: pointer;
 }
 
 mat-icon{
     color: white;
+}
+
+.mat-icon-button{
+    border: none !important;
+}
+
+
+.who{
+    color: white;
+    margin-top: 130vh;
+}
+
+.btn-who{
+    color: white;
+    font-size: large;
+}
+
+.img-who{
+    width: 32%;
+    height: 20%;
+    /* margin-bottom: 5vh; */
 }

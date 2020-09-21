@@ -88,3 +88,13 @@ mat-form-field{
 button{
     width: 100%;
 }
+
+.cont{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+
+.btn-submit{
+    margin-top: 1vh;
+}

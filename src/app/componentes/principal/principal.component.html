@@ -29,6 +29,12 @@
         </button>
         <label for="jugadores">JUGADORES</label>
         </mat-list-item>
+        <mat-list-item>
+          <div class="who">
+            <img class="img-who" src="../../../assets/imagenes/quiensoy.png">
+            <a class="btn-who" mat-button [routerLink]="['/QuienSoy']">Quién soy?</a>
+          </div>
+        </mat-list-item>
       </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -37,7 +43,6 @@
           <mat-icon>menu</mat-icon>
         </button>
         <span [routerLink]="['/']" (click)="checkSidenav(sidenav)">SALA DE JUEGOS</span>
-        <a mat-button [routerLink]="['/QuienSoy']">Quién soy?</a>
         <span class="example-spacer"></span>
         <a href="https://github.com/rodrigodisconsi" mat-button class="fa fa-github"></a>
         <a mat-button routerLink="/Login"><mat-icon>account_circle</mat-icon></a>
@@ -45,4 +50,4 @@
       <br>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
-  </mat-sidenav-container>
+</mat-sidenav-container>

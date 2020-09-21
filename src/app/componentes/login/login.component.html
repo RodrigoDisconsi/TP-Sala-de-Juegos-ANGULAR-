@@ -59,7 +59,9 @@
 <div class="container">
   <mat-card>
     <mat-card-content>
-      <h1>LOGIN</h1>
+      <div class="cont">
+        <img src="./assets/imagenes/login.png" alt="Avatar" class="avatar" max-width="104" >
+      </div>
       <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
       <mat-form-field class="full-width-input">
         <input type="text"
@@ -86,8 +88,8 @@
           {{getErrorMessage('password')}}
         </mat-error>
       </mat-form-field>
-      <br>
-      <button type="submit" mat-raised-button color="primary">Ingresar</button>
+      <button class="btn-submit" type="submit" mat-raised-button color="primary">Ingresar</button>
+      <button mat-button>No tienes cuenta? Registrate</button>
     </form>
     </mat-card-content>
   </mat-card>

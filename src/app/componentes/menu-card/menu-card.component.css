@@ -1,7 +1,7 @@
-.card {
+/* .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
+    border-radius: 5px; 
     max-width: 300px;
    height: 100%;
     margin: 10px;
@@ -11,12 +11,11 @@
     text-align: center;
 }
 
-/* Add rounded corners to the top left and the top right corner of the image */
 img {
     border-radius: 5px 5px 0 0;
     width: 200px;
     height: 200px;
-}/* Add some padding inside the card container */
+}
 .container {
     padding: 2px 16px;
 }
@@ -42,7 +41,6 @@ img {
  
     padding: 8px;
     color: white;
-   /* background-color: #000;*/
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -54,7 +52,7 @@ img {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+  } */
 
 .mat-grid-tile-header{
   justify-content: center;
@@ -75,6 +73,9 @@ img {
 
 .mat-grid-tile .mat-grid-tile-header, .mat-grid-tile .mat-grid-tile-footer {
   padding: 0px 0px;
+  /*  */
+  font: sans-serif;
+  font-size: larger;
 }
 
 .mat-grid-tile {
