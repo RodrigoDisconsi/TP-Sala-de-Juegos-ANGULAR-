@@ -77,18 +77,22 @@
       </mat-form-field>
       <br>
       <mat-form-field class="full-width-input separator">
-        <input type="password"
+        <input 
+               [type]="hide ? 'text' : 'password'"
                class="form-control"
                formControlName="password" 
                matInput 
                placeholder="Password"
                required
-        /> 
+        />
+        <button mat-icon-button matSuffix (click)="hide = !hide">
+          <mat-icon>{{ "visibility" }}</mat-icon>
+        </button>
         <mat-error *ngIf="isNotValidField('password')">
           {{getErrorMessage('password')}}
         </mat-error>
       </mat-form-field>
-      <button class="btn-submit" type="submit" mat-raised-button color="primary">Ingresar</button>
+      <button [disabled]="loginForm.invalid" class="btn-submit" type="submit" mat-raised-button color="primary">Ingresar</button>
       <button mat-button>No tienes cuenta? Registrate</button>
     </form>
     </mat-card-content>
