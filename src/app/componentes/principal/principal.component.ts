@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../servicios/auth.service';
 
 
 @Component({
@@ -8,15 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() {  }
+  public logged;
+
+  constructor(private auth: AuthService) {  }
 
   ngOnInit() {
+    this.auth.user.subscribe(x =>{
+      console.log(x);
+      this.logged = x;
+    })
   }
 
  checkSidenav(sidenav){
    if(sidenav._animationState == "open"){
      sidenav.toggle()
    }
+ }
+
+ async onLogout(){
+   await this.auth.logout();
+   this.logged = null;
  }
 
 }

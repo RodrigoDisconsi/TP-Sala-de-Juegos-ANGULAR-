@@ -19,6 +19,7 @@ import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
 import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/listado-de-paises.component'
 import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
+import { TatetiComponent } from '../componentes/tateti/tateti.component';
 
 
 // declaro donde quiero que se dirija
@@ -31,7 +32,8 @@ const MiRuteo = [
 {path: 'Registro' , component: RegistroComponent},
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
-{path: 'Paises' , component: ListadoDePaisesComponent},
+{path: 'Tateti' , component: TatetiComponent},
+
 
 { path: 'Juegos' ,
 component: JuegosComponent ,

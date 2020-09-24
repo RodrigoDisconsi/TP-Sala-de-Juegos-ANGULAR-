@@ -56,6 +56,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { TatetiComponent } from './componentes/tateti/tateti.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { environment } from '../environments/environment';
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
-    SexoPipe
+    SexoPipe,
+    TatetiComponent
   ],
   imports: [
     BrowserModule,

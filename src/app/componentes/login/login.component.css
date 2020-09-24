@@ -98,3 +98,19 @@ button{
 .btn-submit{
     margin-top: 1vh;
 }
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+}
+
+
+/* input:focus{
+    outline: none !important;
+}
+
+mat-form-field:focus{
+    outline: none !important;
+} */

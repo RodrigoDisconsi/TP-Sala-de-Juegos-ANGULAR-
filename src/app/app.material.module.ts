@@ -11,6 +11,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [],
@@ -26,7 +28,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatListModule,
     MatDividerModule,
     MatSidenavModule,
-    MatGridListModule
+    MatGridListModule,
+    MatProgressSpinnerModule,
+    MatMenuModule
   ],
   exports: [
     MatToolbarModule,
@@ -39,7 +43,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatSidenavModule,
     MatListModule,
     MatDividerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatProgressSpinnerModule,
+    MatMenuModule
   ],
   providers: [ ]
 })

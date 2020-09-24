@@ -56,45 +56,51 @@
   </div>
 </div> -->
 
-<div class="container">
+
+<div class="container" >
   <mat-card>
     <mat-card-content>
-      <div class="cont">
-        <img src="./assets/imagenes/login.png" alt="Avatar" class="avatar" max-width="104" >
+      <div class="loading" *ngIf="cargando">
+        <mat-spinner></mat-spinner>
       </div>
-      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-      <mat-form-field class="full-width-input">
-        <input type="text"
-               class="form-control"
-               formControlName="username"
-               matInput 
-               placeholder="Nombre de usuario"
-               required
-        />
-        <mat-error *ngIf="isNotValidField('username')">
-          {{getErrorMessage('username')}}
-        </mat-error>
-      </mat-form-field>
-      <br>
-      <mat-form-field class="full-width-input separator">
-        <input 
-               [type]="hide ? 'text' : 'password'"
-               class="form-control"
-               formControlName="password" 
-               matInput 
-               placeholder="Password"
-               required
-        />
-        <button mat-icon-button matSuffix (click)="hide = !hide">
-          <mat-icon>{{ "visibility" }}</mat-icon>
-        </button>
-        <mat-error *ngIf="isNotValidField('password')">
-          {{getErrorMessage('password')}}
-        </mat-error>
-      </mat-form-field>
-      <button [disabled]="loginForm.invalid" class="btn-submit" type="submit" mat-raised-button color="primary">Ingresar</button>
-      <button mat-button>No tienes cuenta? Registrate</button>
-    </form>
+      <div *ngIf="!cargando">
+        <div class="cont">
+          <img src="../../../assets/imagenes/login.png" alt="Avatar" class="avatar" max-width="104" >
+        </div>
+        <form [formGroup]="loginForm">
+        <mat-form-field class="full-width-input">
+          <input type="text"
+                 class="form-control"
+                 formControlName="username"
+                 matInput 
+                 placeholder="Nombre de usuario"
+                 required
+          />
+          <mat-error *ngIf="isNotValidField('username')">
+            {{getErrorMessage('username')}}
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="full-width-input separator">
+          <input 
+                 [type]="hide ? 'text' : 'password'"
+                 class="form-control"
+                 formControlName="password" 
+                 matInput 
+                 placeholder="Password"
+                 required
+          />
+          <button mat-icon-button matSuffix (click)="hide = !hide">
+            <mat-icon>{{ "visibility" }}</mat-icon>
+          </button>
+          <mat-error *ngIf="isNotValidField('password')">
+            {{getErrorMessage('password')}}
+          </mat-error>
+        </mat-form-field>
+        <button [disabled]="loginForm.invalid" class="btn-submit" (click)="onLogin()" mat-raised-button color="primary">Ingresar</button>
+        <button mat-button>No tienes cuenta? Registrate</button>
+      </form>
+      </div> 
     </mat-card-content>
   </mat-card>
 </div>

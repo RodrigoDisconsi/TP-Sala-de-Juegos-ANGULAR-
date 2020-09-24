@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from '../clases/user.interface';
-import { auth } from 'firebase/app';
+import { auth, firestore } from 'firebase/app';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -70,14 +70,22 @@ export class AuthService {
   }
 
   private updateUserData(user:User){
-    const userRef:AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    const data:User = {
+    var users = "users";
+    const userRef:AngularFirestoreDocument<User> = this.afs.doc(users + `/${user.uid}`);
+    const data = {
       uid:user.uid,
       email:user.email,
       emailVerified: user.emailVerified,
-      displayName: user.displayName
+      fechaAcceso: firestore.Timestamp.fromDate(new Date())
     };
 
     return userRef.set(data, { merge:true });
+  }
+
+  private insertData(user:User){
+    return this.afs.collection('users').add({
+      email: user.email,
+      uid: user.uid
+    });
   }
 }

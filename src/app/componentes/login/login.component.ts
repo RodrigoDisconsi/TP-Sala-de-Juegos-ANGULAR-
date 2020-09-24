@@ -12,7 +12,7 @@ import { AuthService } from '../../servicios/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  private subscription: Subscription;
+  public cargando:boolean = false;
   public hide:boolean;
   loginForm = this.fb.group({
     username: ['', Validators.required],
@@ -33,10 +33,11 @@ export class LoginComponent implements OnInit {
   }
 
   async onLogin(){
+    this.cargando = true;
     try{
       const user = await this.auth.login(this.loginForm.value.username, this.loginForm.value.password);
       if(user){
-        console.log(user);
+        this.router.navigateByUrl("");
       }
     }
     catch(e){

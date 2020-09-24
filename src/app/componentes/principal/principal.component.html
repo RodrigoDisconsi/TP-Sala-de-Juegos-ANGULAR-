@@ -39,13 +39,19 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar color="primary">
-        <button mat-icon-button (click)="sidenav.toggle()">
+        <button *ngIf="logged" mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
         <span [routerLink]="['/']" (click)="checkSidenav(sidenav)">SALA DE JUEGOS</span>
         <span class="example-spacer"></span>
         <a href="https://github.com/rodrigodisconsi" mat-button class="fa fa-github"></a>
-        <a mat-button routerLink="/Login"><mat-icon>account_circle</mat-icon></a>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button *ngIf="!logged" [routerLink]="['/Login']" mat-menu-item>Login</button>
+          <button *ngIf="logged" mat-menu-item (click)="onLogout()">Logout</button>
+        </mat-menu>
       </mat-toolbar>
       <br>
       <router-outlet></router-outlet>
