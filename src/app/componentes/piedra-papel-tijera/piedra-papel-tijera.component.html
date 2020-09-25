@@ -1,0 +1,42 @@
+<div class="main-container">
+    <h1 class="mat-display-2" style="font-weight: 900; text-align: center; color: white">Piedra Papel o Tijera</h1>
+    <div class="field">
+        <mat-grid-list cols="5" rowHeight="1:0.7">
+
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button class="jugo" mat-icon-button [ngClass]="{piedra: tipo == 'piedra', papel: tipo == 'papel', tijera: tipo == 'tijera'}"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <h1 class="mat-display-1" style="font-weight: 900; text-align: center; color: white">{{mensaje}}</h1>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button class="jugoPc" mat-icon-button [ngClass]="{piedra: tipoPc == 'piedra', papel: tipoPc == 'papel', tijera: tipoPc == 'tijera'}"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="jugo" mat-icon-button class="piedra" (click)="juega('piedra')"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="jugo" mat-icon-button class="papel" (click)="juega('papel')"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="jugo" mat-icon-button class="tijera" (click)="juega('tijera')"></button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

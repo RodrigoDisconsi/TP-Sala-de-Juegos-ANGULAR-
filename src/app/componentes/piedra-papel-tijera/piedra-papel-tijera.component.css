@@ -1,0 +1,61 @@
+mat-grid-list{
+    width: 90%;
+}
+
+/* mat-grid-tile{
+    border: 1px solid;
+} */
+
+.main-container{
+    background: linear-gradient(to right, #232526, #414345);
+    margin-top: -20px;
+    padding-bottom: 17px;
+}
+
+h1{
+    padding-top: 10px;
+}
+
+
+.field{
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+.piedra{
+    background-image: url("../../../assets/imagenes/piedra.png");
+    height: 200px;
+    width: 200px;
+    background-size: 100% 100%;
+    transform: rotate(-55deg);
+    border: 0px;
+}
+
+.tijera{
+    background-image: url("../../../assets/imagenes/tijera.png");
+    height: 200px;
+    width: 200px;
+    background-size: 100% 100%;
+    transform: rotate(49deg);
+    border: 0px;
+}
+
+.papel{
+    background-image: url("../../../assets/imagenes/papel.png");
+    height: 200px;
+    width: 200px;
+    background-size: 100% 100%;
+    transform: rotate(180deg);
+    border: 0px;
+}
+
+.jugo{
+    margin-bottom: 4vh;
+    margin-left: 15vh;
+}
+
+.jugoPc{
+    margin-bottom: 4vh;
+    margin-left: -15vh;
+}

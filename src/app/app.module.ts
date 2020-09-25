@@ -47,7 +47,6 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
-import { ListadoDePaisesComponent } from './componentes/listado-de-paises/listado-de-paises.component';
 import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-google.component'
 import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
@@ -57,6 +56,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 
 @NgModule({
   declarations: [
@@ -76,12 +76,12 @@ import { TatetiComponent } from './componentes/tateti/tateti.component';
     MenuCardComponent,
     QuienSoyComponent,
     AnagramaComponent,
-    ListadoDePaisesComponent,
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    TatetiComponent
+    TatetiComponent,
+    PiedraPapelTijeraComponent
   ],
   imports: [
     BrowserModule,

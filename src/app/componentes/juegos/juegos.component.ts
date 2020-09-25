@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-juegos',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuegosComponent implements OnInit {
 
-  constructor() { }
+  public rutaPadre: boolean;
+  constructor(
+    private router: Router
+    ) { }
 
   ngOnInit() {
+    console.log(this.router.url);
+    this.rutaPadre = this.router.url == "/Juegos";
   }
 
 }

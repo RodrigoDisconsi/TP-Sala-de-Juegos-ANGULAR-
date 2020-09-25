@@ -1,36 +1,39 @@
 <div class="main-container">
-    <h1 class="mat-display-2" style="font-weight: 900; text-align: center; margin: 15px 0; color: white">Ta-Te-Ti</h1>
-    <div class="field">
-        <p class="mat-display-1" style="color:white">Presione el botón para comenzar</p>
-    </div>
-
-    <div class="field" style="width: 100%;">
+    <h1 class="mat-display-2" style="font-weight: 900; text-align: center; color: white">Ta-Te-Ti</h1>
+    <!-- <div class="field" style="width: 100%">
         <button mat-raised-button color="accent" class="start-game-button">Comenzar</button>
-    </div>
+    </div> -->
 
-    <div class="gameboard">
+    <div class="field">
+        <mat-grid-list cols="3" rowHeight="1:0.7">
+            <mat-grid-tile class="col1" [ngClass]="{circulo: casilleros[0] == 'o', cruz: casilleros[0] == 'x'}" (click)="jugar(0)">
+
+            </mat-grid-tile>
+            <mat-grid-tile class="col2" [ngClass]="{circulo: casilleros[1] == 'o', cruz: casilleros[1] == 'x'}" (click)="jugar(1)">
+
+            </mat-grid-tile>
+            <mat-grid-tile class="col3" [ngClass]="{circulo: casilleros[2] == 'o', cruz: casilleros[2] == 'x'}" (click)="jugar(2)">
+
+            </mat-grid-tile>
+            <mat-grid-tile class="col4" [ngClass]="{circulo: casilleros[3] == 'o', cruz: casilleros[3] == 'x'}" (click)="jugar(3)">
+
+            </mat-grid-tile>
+            <mat-grid-tile class="col5" [ngClass]="{circulo: casilleros[4] == 'o', cruz: casilleros[4] == 'x'}" (click)="jugar(4)">
+
+            </mat-grid-tile>
+            <mat-grid-tile class="col6" [ngClass]="{circulo: casilleros[5] == 'o', cruz: casilleros[5] == 'x'}" (click)="jugar(5)">
+
+            </mat-grid-tile>
+            <mat-grid-tile class="col7" [ngClass]="{circulo: casilleros[6] == 'o', cruz: casilleros[6] == 'x'}" (click)="jugar(6)">
+
+            </mat-grid-tile>
+            <mat-grid-tile class="col8" [ngClass]="{circulo: casilleros[7] == 'o', cruz: casilleros[7] == 'x'}" (click)="jugar(7)">
+
+            </mat-grid-tile>
+            <mat-grid-tile class="col9" [ngClass]="{circulo: casilleros[8] == 'o', cruz: casilleros[8] == 'x'}" (click)="jugar(8)">
+
+            </mat-grid-tile>
+        </mat-grid-list>
         
-        <div class=""></div>
-
-        <div class="gamefield container-fluid">
-            <div class="row">
-                <div class="subfield col-4"></div>
-                <div class="subfield col-4"></div>
-                <div class="subfield col-4"></div>
-            </div>
-            <div class="row">
-                <div class="subfield col-4"></div>
-                <div class="subfield col-4"></div>
-                <div class="subfield col-4"></div>
-            </div>
-            <div class="row">
-                <div class="subfield col-4"></div>
-                <div class="subfield col-4"></div>
-                <div class="subfield col-4"></div>
-            </div>
-        </div>
-
-        <div class=""></div>
-
     </div>
 </div>

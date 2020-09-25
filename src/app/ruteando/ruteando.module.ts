@@ -15,12 +15,11 @@ import { ListadosComponent } from '../componentes/listados/listados.component';
 import { JuegosComponent } from '../componentes/juegos/juegos.component';
 import { RegistroComponent } from '../componentes/registro/registro.component';
 import { MenuCardComponent } from '../componentes/menu-card/menu-card.component';
-import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component'
-import { ListadoDePaisesComponent } from '../componentes/listado-de-paises/listado-de-paises.component'
-import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component'
+import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component';
+import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-google.component';
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { TatetiComponent } from '../componentes/tateti/tateti.component';
-
+import{ PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
@@ -32,17 +31,19 @@ const MiRuteo = [
 {path: 'Registro' , component: RegistroComponent},
 {path: 'Principal' , component: PrincipalComponent},
 {path: 'Listado' , component: ListadoComponent},
-{path: 'Tateti' , component: TatetiComponent},
 
 
 { path: 'Juegos' ,
 component: JuegosComponent ,
 children:
-     [{path: '' , component: MenuCardComponent},
+    [{path: '' , component: MenuCardComponent},
      {path: 'Adivina' , component: AdivinaElNumeroComponent},
-      {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-      {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent}]
+     {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
+     {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
+     {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
+     {path: 'PiedraPapelTijera' , component: PiedraPapelTijeraComponent},
+     {path: 'Tateti' , component: TatetiComponent},
+    ]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];
