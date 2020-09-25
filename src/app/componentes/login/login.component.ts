@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.loginForm.get('username').value);
+    // console.log(this.loginForm.get('username').value);
   }
 
   async onLogin(){

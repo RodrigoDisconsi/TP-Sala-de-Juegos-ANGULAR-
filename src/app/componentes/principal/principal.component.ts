@@ -15,7 +15,7 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit() {
     this.auth.user.subscribe(x =>{
-      console.log(x);
+      // console.log(x);
       this.logged = x;
     })
   }

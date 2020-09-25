@@ -12,11 +12,6 @@ export class PiedraPapelTijeraComponent implements OnInit {
   public mensaje:string;
   public tipoPc:string;
 
-  // enum Tipo{ ?
-  //   piedra = 1,
-    
-  // }
-
   constructor() { }
 
   ngOnInit(): void {

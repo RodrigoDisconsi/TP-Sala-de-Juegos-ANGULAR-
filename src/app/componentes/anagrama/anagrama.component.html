@@ -1,3 +1,24 @@
-<p>
-  anagrama works!
-</p>
+<div class="main-container">
+  <h1 class="mat-display-2" style="font-weight: 900; text-align: center; color: black">Anagrama</h1>
+</div>
+
+
+<div class="field">
+  <mat-card>
+    <br>
+    <h1 class="mat-display-2" style="font-weight: 900; text-align: center; color: black">¿Cuál es la palabra?</h1>
+    <br>
+    <h2 class="mat-display-1" style="font-weight: 500; text-align: center; color: black">{{palabraSecretaDesordenada}}</h2>
+    <br>
+    <p class="mat-display-0" style="font-weight: 900; text-align: center; color: black">{{mensaje}}</p>
+    <br>
+    <div class="field">
+      <mat-form-field>
+        <input matInput [(ngModel)]="palabraJugador" type="text">
+      </mat-form-field>
+    </div>
+    <div class="field">
+      <button mat-raised-button color="accent" (click)="onJugar()">Jugar</button>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,27 @@
+.field{
+    display: flex;
+    justify-content: center;
+}
+
+mat-card{
+    width: 40%;
+}
+
+h2{
+    letter-spacing: 2vh !important;
+}
+
+mat-form-field{
+    width: 85%;
+}
+
+input{
+    text-align: center;
+    font: 400 34px/40px Roboto, "Helvetica Neue", sans-serif;
+}
+
+button{
+    width: 80%;
+    
+    font: 400 34px/40px Roboto, "Helvetica Neue", sans-serif;
+}

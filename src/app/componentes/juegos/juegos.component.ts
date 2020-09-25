@@ -14,7 +14,6 @@ export class JuegosComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    console.log(this.router.url);
     this.rutaPadre = this.router.url == "/Juegos";
   }
 
