@@ -81,4 +81,10 @@ export class AgilidadAritmeticaComponent implements OnInit {
     this.loading = false;
   }
 
+  onKeypress(e){
+    if(e.keyCode == 13){
+      this.onJugar();
+    }
+  }
+
 }

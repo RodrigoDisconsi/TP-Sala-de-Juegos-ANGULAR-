@@ -1,6 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div *ngIf="rutaPadre" style="text-align:center">
   <h1 class="mat-display-2" style="font-weight: 900; text-align: center; color: white">SALA DE JUEGOS</h1>
+</div>
+<div *ngIf="!rutaPadre">
+  <button mat-button style="color: white; width: 15%;" [routerLink]="['/Juegos']" routerLinkActive="router-link-active" >Volver</button>
 </div>
 <router-outlet></router-outlet>
  

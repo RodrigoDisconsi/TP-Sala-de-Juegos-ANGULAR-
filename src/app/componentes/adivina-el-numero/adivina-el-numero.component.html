@@ -20,7 +20,7 @@
       <br>
       <div class="field">
         <mat-form-field>
-          <input matInput type="number" [(ngModel)]="numeroIngresado">
+          <input (keypress)="onKeypress($event)" matInput type="number" [(ngModel)]="numeroIngresado">
         </mat-form-field>
       </div>
       <br>

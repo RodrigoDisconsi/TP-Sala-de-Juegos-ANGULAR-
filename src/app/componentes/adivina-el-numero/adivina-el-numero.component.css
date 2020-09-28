@@ -25,6 +25,7 @@ mat-form-field{
 input{
     text-align: center;
     font: 400 34px/40px Roboto, "Helvetica Neue", sans-serif;
+    color: white;
 }
 
 button{

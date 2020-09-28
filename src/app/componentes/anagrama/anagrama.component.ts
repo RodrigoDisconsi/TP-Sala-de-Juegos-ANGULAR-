@@ -70,4 +70,9 @@ export class AnagramaComponent implements OnInit {
       }, 2000);
     }
     
+    onKeypress(e){
+      if(e.keyCode == 13){
+        this.onJugar();
+      }
+    }
 }

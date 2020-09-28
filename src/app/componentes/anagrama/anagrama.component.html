@@ -1,8 +1,3 @@
-<div class="main-container">
-  <h1 class="mat-display-2" style="font-weight: 900; text-align: center; color: black">Anagrama</h1>
-</div>
-
-
 <div class="field">
   <mat-card>
     <br>
@@ -14,7 +9,7 @@
     <br>
     <div class="field">
       <mat-form-field>
-        <input matInput [(ngModel)]="palabraJugador" type="text">
+        <input (keypress)="onKeypress($event)" matInput [(ngModel)]="palabraJugador" type="text">
       </mat-form-field>
     </div>
     <div class="field">

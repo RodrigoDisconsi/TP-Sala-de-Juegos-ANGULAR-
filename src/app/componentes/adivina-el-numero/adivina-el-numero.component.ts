@@ -37,11 +37,11 @@ export class AdivinaElNumeroComponent implements OnInit {
   onJugar(){
     this.deshabilitar = true;
     if(this.numeroIngresado > this.numeroAleatorio){
-      this.setMensaje("El número ingresado es mayor");
+      this.setMensaje("Es más chico!");
       this.intentos --;
     }
     else if(this.numeroIngresado < this.numeroAleatorio){
-      this.setMensaje("El número ingresado es menor");
+      this.setMensaje("Es más grande!");
       this.intentos--;  
     }
     else{
@@ -74,5 +74,11 @@ export class AdivinaElNumeroComponent implements OnInit {
 
   onReiniciar(){
     this.reiniciar();
+  }
+
+  onKeypress(e){
+    if(e.keyCode == 13){
+      this.onJugar();
+    }
   }
 }
