@@ -57,3 +57,7 @@ mat-icon{
     width: 32%;
     height: 20%;
 }
+
+.mat-sidenav-content{
+    background: linear-gradient(to right, #232526, #414345);
+}

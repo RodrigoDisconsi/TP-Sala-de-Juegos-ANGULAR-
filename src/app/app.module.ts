@@ -57,6 +57,8 @@ import { environment } from '../environments/environment';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { MemotestComponent } from './componentes/memotest/memotest.component';
+import { SnakeComponent } from './componentes/snake/snake.component';
+import { BestScoreManagerService } from './servicios/best-score-manager.service';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,8 @@ import { MemotestComponent } from './componentes/memotest/memotest.component';
     SexoPipe,
     TatetiComponent,
     PiedraPapelTijeraComponent,
-    MemotestComponent
+    MemotestComponent,
+    SnakeComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +104,7 @@ import { MemotestComponent } from './componentes/memotest/memotest.component';
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService,BestScoreManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,56 +1,14 @@
-<!-- <div class="container" >
-    <div class="card">
-      <img class="img-thumbnail"   src="../../../assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
-      <h1>Velocidad y agilidad aritmética </h1>
-      <p class="title">Juego de agilidad mental</p>
-      <p>UTN FRA </p>
-  
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Agilidad')">Jugar</button></p>
-    
-    </div>
-  
-    <div class="card">
-      <img class="img-thumbnail" src="../../../assets/imagenes/ppt.jpg" alt="Avatar" style="width:100%">
-      <h1>Piedra Papel o Tijera</h1>
-      <p class="title">Juega contra la máquina</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('PPT')">Jugar</button></p>
-    </div>
-    <div class="card">
-      <img  class="img-thumbnail"  src="../../../assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
-      <h1>Adivina el número secreto</h1>
-      <p class="title">Juega de estrategia</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
-    </div>
-  </div> -->
-
-
   <mat-grid-list cols="3" rowHeight="3:2" gutterSize="5vh">
     <mat-grid-tile [style.border]="'3px inset'" [style.borderRadius]="'16px'">
   
       <img class="imagen" src="../../../assets/imagenes/adivina.png">
   
       <mat-grid-tile-header [style.background]="'white'">
-        ADIVINA EL NÚMERO
+        <h1 class="mat-display-0" style="font-weight: 900; text-align: center; color: white">ADIVINA EL NÚMERO</h1>
       </mat-grid-tile-header>
   
       <mat-grid-tile-footer [style.background]="'white'">
-        <button (click)="Juego('Adivina')" routerLinkActive="router-link-active"  class="btn-jugar" mat-raised-button>JUGAR</button>
+        <button color="accent"(click)="Juego('Adivina')" routerLinkActive="router-link-active"  class="btn-jugar" mat-raised-button>JUGAR</button>
       </mat-grid-tile-footer>
   
     </mat-grid-tile>
@@ -59,11 +17,11 @@
       <img class="imagen" src="../../../assets/imagenes/cerebro.jpg">
   
       <mat-grid-tile-header [style.background]="'white'">
-        JUEGO DE AGILIDAD MENTAL
+        <h1 class="mat-display-0" style="font-weight: 900; text-align: center; color: white">JUEGO DE AGILIDAD MENTAL</h1>
       </mat-grid-tile-header>
   
       <mat-grid-tile-footer [style.background]="'white'">
-        <button (click)="Juego('Agilidad')" class="btn-jugar" mat-raised-button>JUGAR</button>
+        <button color="accent"(click)="Juego('Agilidad')" class="btn-jugar" mat-raised-button>JUGAR</button>
       </mat-grid-tile-footer>
   
     </mat-grid-tile>
@@ -72,11 +30,10 @@
       <img class="imagen" src="../../../assets/imagenes/ppt.jpg">
   
       <mat-grid-tile-header [style.background]="'white'">
-        PIEDRA PAPEL O TIJERA
+        <h1 class="mat-display-0" style="font-weight: 900; text-align: center; color: white">PIEDRA PAPEL O TIJERA</h1>
       </mat-grid-tile-header>
-  
       <mat-grid-tile-footer [style.background]="'white'">
-        <button (click)="Juego('PiedraPapelTijera')" class="btn-jugar" mat-raised-button>JUGAR</button>
+        <button color="accent"(click)="Juego('PiedraPapelTijera')" class="btn-jugar" mat-raised-button>JUGAR</button>
       </mat-grid-tile-footer>
   
     </mat-grid-tile>
@@ -85,11 +42,11 @@
       <img class="imagen" src="../../../assets/imagenes/anagrama.jpg">
   
       <mat-grid-tile-header [style.background]="'white'">
-        ANAGRAMA
+        <h1 class="mat-display-0" style="font-weight: 900; text-align: center; color: white">ANAGRAMA</h1>
       </mat-grid-tile-header>
   
       <mat-grid-tile-footer [style.background]="'white'">
-        <button (click)="Juego('Anagrama')" class="btn-jugar" mat-raised-button>JUGAR</button>
+        <button color="accent"(click)="Juego('Anagrama')" class="btn-jugar" mat-raised-button>JUGAR</button>
       </mat-grid-tile-footer>
   
     </mat-grid-tile>
@@ -98,11 +55,11 @@
       <img class="imagen" src="../../../assets/imagenes/Tic_tac_toe.svg">
   
       <mat-grid-tile-header [style.background]="'white'">
-        TA-TE-TI
+        <h1 class="mat-display-0" style="font-weight: 900; text-align: center; color: white">TA-TE-TI</h1>
       </mat-grid-tile-header>
   
       <mat-grid-tile-footer [style.background]="'white'">
-        <button (click)="Juego('Tateti')" class="btn-jugar" mat-raised-button>JUGAR</button>
+        <button color="accent"(click)="Juego('Tateti')" class="btn-jugar" mat-raised-button>JUGAR</button>
       </mat-grid-tile-footer>
   
     </mat-grid-tile>
@@ -111,11 +68,27 @@
       <img class="imagen" src="../../../assets/imagenes/memotest.jpg">
   
       <mat-grid-tile-header [style.background]="'white'">
-        MEMOTEST
+        <h1 class="mat-display-0" style="font-weight: 900; text-align: center; color: white">MEMOTEST</h1>
       </mat-grid-tile-header>
   
       <mat-grid-tile-footer [style.background]="'white'">
-        <button (click)="Juego('Memotest')" class="btn-jugar" mat-raised-button>JUGAR</button>
+        <button color="accent"(click)="Juego('Memotest')" class="btn-jugar" mat-raised-button>JUGAR</button>
+      </mat-grid-tile-footer>
+  
+    </mat-grid-tile>
+    <mat-grid-tile>
+    </mat-grid-tile>
+
+    <mat-grid-tile [style.border]="'3px inset'" [style.borderRadius]="'16px'">
+  
+      <img class="imagen" src="../../../assets/imagenes/snake.png">
+  
+      <mat-grid-tile-header [style.background]="'white'">
+      <h1 class="mat-display-0" style="font-weight: 900; text-align: center; color: white">SNAKE</h1>
+      </mat-grid-tile-header>
+  
+      <mat-grid-tile-footer [style.background]="'white'">
+        <button color="accent"color="accent" (click)="Juego('Memotest')" class="btn-jugar" mat-raised-button>JUGAR</button>
       </mat-grid-tile-footer>
   
     </mat-grid-tile>
