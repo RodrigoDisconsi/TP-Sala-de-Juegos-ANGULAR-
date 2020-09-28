@@ -8,8 +8,6 @@ import { LoginComponent } from '../componentes/login/login.component';
 import { ErrorComponent } from '../componentes/error/error.component';
 import { PrincipalComponent } from '../componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from '../componentes/agilidad-aritmetica/agilidad-aritmetica.component';
-import { AdivinaMasListadoComponent } from '../componentes/adivina-mas-listado/adivina-mas-listado.component';
-import { AgilidadMasListadoComponent } from '../componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { ListadoComponent } from'../componentes/listado/listado.component'
 import { ListadosComponent } from '../componentes/listados/listados.component';
 import { JuegosComponent } from '../componentes/juegos/juegos.component';
@@ -21,6 +19,7 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 import { TatetiComponent } from '../componentes/tateti/tateti.component';
 import{ PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+import { MemotestComponent } from '../componentes/memotest/memotest.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
@@ -34,17 +33,17 @@ const MiRuteo = [
 {path: 'Listado' , component: ListadoComponent},
 
 
+
 { path: 'Juegos' ,
 component: JuegosComponent ,
 children:
     [{path: '' , component: MenuCardComponent},
      {path: 'Adivina' , component: AdivinaElNumeroComponent},
-     {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-     {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
      {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
      {path: 'PiedraPapelTijera' , component: PiedraPapelTijeraComponent},
      {path: 'Tateti' , component: TatetiComponent},
      {path: 'Anagrama' , component: AnagramaComponent},
+     {path: 'Memotest' , component: MemotestComponent},
     ]
 },
 {path: '**' , component: ErrorComponent},

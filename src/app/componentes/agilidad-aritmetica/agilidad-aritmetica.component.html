@@ -1,38 +1,35 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!--app-menu></app-menu-->
-<!-- index.html -->
-
-
-<form name="juego">
-<ul>
-   <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-  
-  </li>
-  <li>
-   Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
-     
-   </li>
-  <li>
-    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
-  </li>
-  <li>
-    <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
-  </li>
-  <li>
-    <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
-
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
-  </li>
-</ul>
-
-</form>
+<div class="main-container">
+  <h1 class="mat-display-2" style="font-weight: 900; text-align: center; color: white">Agilidad aritmetica</h1>
+  <div class="field">
+    <mat-card>
+      <br>
+      <div class="loading" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+      <div *ngIf="!loading">
+        <div *ngIf="!termino">
+          <h1 class="mat-display-1" style="font-weight: 900; text-align: center; color: white">¿Cuál es el resultado?</h1>
+          <br>
+          <br>
+          <p class="mat-display-1" style="font-weight: 900; text-align: center; color: white">{{numeroA}} {{operador}} {{numeroB}}</p> 
+        </div>
+        <div *ngIf="mensaje">
+          <h1 class="mat-display-1" style="font-weight: 900; text-align: center; color: white">{{mensaje}}</h1>
+        </div>
+        <br>
+        <br>
+        <div class="field">
+          <mat-form-field>
+            <mat-label class="mat-display-0">Resultado</mat-label>
+            <input matInput type="number" [(ngModel)]="resultadoIngresado">
+          </mat-form-field>
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <button *ngIf="!termino" mat-raised-button color="primary" (click)="onJugar()">Jugar</button>
+        <button *ngIf="termino" mat-raised-button color="primary" (click)="onReiniciar()">Jugar de nuevo</button>
+      </div>
+    </mat-card>
+  </div>
+</div>

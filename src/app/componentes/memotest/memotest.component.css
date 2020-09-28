@@ -1,0 +1,42 @@
+.mat-grid-tile-header{
+    justify-content: center;
+    color: black !important;
+    /* height: 100%; */
+  }
+.main-container{
+    background: linear-gradient(to right, #232526, #414345);
+    margin-top: -20px;
+    height: 93.4%;
+}
+
+h1{
+    padding-top: 3vh;
+}
+  
+  .mat-grid-tile {
+    border: 1px solid white;
+  }
+
+
+  .mat-grid-list{
+      width: 35%;
+      margin-top: 10vh !important;
+      justify-content: center;
+  }
+
+  button{
+    height: 100%;
+    width: 100%;
+    background-size: 150px 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .btn-empezar{
+    width: 30%;
+    padding: 1vh 1vh;
+  }
+
+.mat-grid-list{
+  padding-bottom: 0 !important;
+}

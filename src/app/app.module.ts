@@ -20,7 +20,6 @@ import{ ArchivosJugadoresService} from './servicios/archivos-jugadores.service';
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
-import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
 import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { RuteandoModule } from './ruteando/ruteando.module';
 import { ListadoComponent } from './componentes/listado/listado.component';
@@ -57,6 +56,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { MemotestComponent } from './componentes/memotest/memotest.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +67,6 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
     PrincipalComponent,
     LoginComponent,
     AgilidadAritmeticaComponent,
-    AdivinaMasListadoComponent,
     AgilidadMasListadoComponent,
     ListadoComponent,
     ListadosComponent,
@@ -81,7 +80,8 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
     InputJugadoresComponent,
     SexoPipe,
     TatetiComponent,
-    PiedraPapelTijeraComponent
+    PiedraPapelTijeraComponent,
+    MemotestComponent
   ],
   imports: [
     BrowserModule,

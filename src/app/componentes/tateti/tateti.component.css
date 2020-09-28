@@ -7,10 +7,10 @@ h1{
     padding-top: 10px;
 }
 
-.field{
+/* .field{
     display: flex;
     justify-content: center;
-}
+} */
 
 mat-grid-list{
     width: 50%;

@@ -1,0 +1,50 @@
+<div class="main-container">
+    <h1 class="mat-display-2" style="font-weight: 900; text-align: center; color: white">MemoTest</h1>
+    <div *ngIf="!comenzo" class="field">
+        <button class="btn-empezar" mat-raised-button color="accent" (click)="empezar()">Empezar</button>
+    </div>
+    <h1 *ngIf="comenzo" class="mat-display-1" style="font-weight: 900; text-align: center; color: white">{{mensaje}}</h1>
+    <div *ngIf="reiniciar" class="field">
+        <button class="btn-empezar" mat-raised-button color="accent" (click)="onReiniciar()">Reiniciar</button>
+    </div>
+    <div class="field">
+        <mat-grid-list cols="4" rowHeight="1:0.7">
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[0]" [ngStyle]="{'background-image': 'url(' + fotos[0] + ')'}" mat-button (click)="juega(0)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[1]" [ngStyle]="{'background-image': 'url(' + fotos[1] + ')'}" mat-button (click)="juega(1)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[2]" [ngStyle]="{'background-image': 'url(' + fotos[2] + ')'}" mat-button (click)="juega(2)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[3]" [ngStyle]="{'background-image': 'url(' + fotos[3] + ')'}" mat-button (click)="juega(3)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[4]" [ngStyle]="{'background-image': 'url(' + fotos[4] + ')'}" mat-button (click)="juega(4)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[5]" [ngStyle]="{'background-image': 'url(' + fotos[5] + ')'}" mat-button (click)="juega(5)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[6]" [ngStyle]="{'background-image': 'url('+ fotos[6] +')'}" mat-button (click)="juega(6)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[7]" [ngStyle]="{'background-image': 'url('+ fotos[7] +')'}" mat-button (click)="juega(7)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[8]" [ngStyle]="{'background-image': 'url('+ fotos[8] +')'}" mat-button (click)="juega(8)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[9]" [ngStyle]="{'background-image': 'url('+ fotos[9] +')'}" mat-button (click)="juega(9)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[10]" [ngStyle]="{'background-image': 'url('+ fotos[10] +')'}" mat-button (click)="juega(10)"></button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button [disabled]="deshabilitar[11]" [ngStyle]="{'background-image': 'url('+ fotos[11] +')'}" mat-button (click)="juega(11)"></button>
+            </mat-grid-tile>
+        </mat-grid-list> 
+    </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-juegos',
@@ -8,13 +8,18 @@ import { Router } from '@angular/router';
 })
 export class JuegosComponent implements OnInit {
 
-  public rutaPadre: boolean;
+  public rutaPadre: boolean = true;
   constructor(
     private router: Router
     ) { }
 
   ngOnInit() {
-    this.rutaPadre = this.router.url == "/Juegos";
+    this.router.events.subscribe(x =>{
+      if(x instanceof NavigationEnd){
+        this.rutaPadre = x.url == "/Juegos";
+        console.log(this.rutaPadre);
+      }
+    });
   }
 
 }

@@ -9,43 +9,76 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
   styleUrls: ['./agilidad-aritmetica.component.css']
 })
 export class AgilidadAritmeticaComponent implements OnInit {
-   @Output() 
-  enviarJuego :EventEmitter<any>= new EventEmitter<any>();
-  nuevoJuego : JuegoAgilidad;
-  ocultarVerificar: boolean;
-  Tiempo: number;
-  repetidor:any;
-  private subscription: Subscription;
+
+  public resultadoIngresado:number;
+  public mensaje:string;
+  public numeroA:number;
+  public numeroB:number;
+  public resultado:number;
+  public operador:string;
+  public termino:boolean = false;
+  public loading:boolean = false;
+
   ngOnInit() {
-  }
-   constructor() {
-     this.ocultarVerificar=true;
-     this.Tiempo=5; 
-    this.nuevoJuego = new JuegoAgilidad();
-    console.info("Inicio agilidad");  
-  }
-  NuevoJuego() {
-    this.ocultarVerificar=false;
-   this.repetidor = setInterval(()=>{ 
-      
-      this.Tiempo--;
-      console.log("llego", this.Tiempo);
-      if(this.Tiempo==0 ) {
-        clearInterval(this.repetidor);
-        this.verificar();
-        this.ocultarVerificar=true;
-        this.Tiempo=5;
-      }
-      }, 900);
 
   }
-  verificar()
-  {
-    this.ocultarVerificar=false;
-    clearInterval(this.repetidor);
-   
 
-   
-  }  
+  constructor() {
+    this.comenzarJuego();
+  }
+
+
+  comenzarJuego() {
+    this.numeroA = Math.floor(Math.random() * 100+0);
+    this.numeroB = Math.floor(Math.random() * 50+0);
+    let auxOperador = Math.floor(Math.random() * 4+0);
+    switch(auxOperador){
+      case 0:
+        this.operador = "+";
+        this.resultado = this.numeroA + this.numeroB;
+        break;
+      case 1:
+        this.operador = "-";
+        this.resultado = this.numeroA - this.numeroB;
+        break;
+      case 2:
+          this.operador = "/";
+          this.resultado = this.numeroA / this.numeroB;
+          break;
+      case 3:
+          this.operador = "*";
+          this.resultado = this.numeroA * this.numeroB;
+          break;
+    }
+  }
+
+  verificar(){
+    if(this.resultadoIngresado == this.resultado){
+      this.mensaje = "¡GANASTE!";
+    }
+    else{
+      this.mensaje = "¡PERDISTE!";
+    }
+    this.termino = true;
+    this.loading = false;
+  }
+
+  onJugar(){
+    this.loading = true;
+    setTimeout(() => this.verificar(), 1000);
+  }
+
+  onReiniciar(){
+    this.loading = true;
+    setTimeout(() => this.reiniciar(), 1000);
+  }
+
+  reiniciar(){
+    this.mensaje = "";
+    this.termino = false;
+    this.comenzarJuego();
+    this.resultadoIngresado = null;
+    this.loading = false;
+  }
 
 }

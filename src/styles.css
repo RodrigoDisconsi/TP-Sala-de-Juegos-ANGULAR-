@@ -23,3 +23,9 @@ span:focus{
 /* input:focus{
     outline: none !important;
 } */
+
+.field{
+    display: flex;
+    justify-content: center;
+}
+
