@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BestScoreManagerService } from '../../servicios/best-score-manager.service';
 import { CONTROLS, COLORS, BOARD_SIZE, GAME_MODES } from '../../clases/const';
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-snake',
@@ -43,7 +44,8 @@ export class SnakeComponent implements OnInit {
   };
 
   constructor(
-    private bestScoreService: BestScoreManagerService
+    private bestScoreService: BestScoreManagerService,
+    private juegoService: JuegoServiceService
   ) {
     this.setBoard();
   }
@@ -226,7 +228,17 @@ export class SnakeComponent implements OnInit {
     setTimeout(() => {
       me.isGameOver = false;
     }, 500);
-
+    
+    this.juegoService.setResult({
+      juego: 'Snake',
+      puntaje: this.score
+    })
+    .then(result => {
+      console.log(result);
+    })
+    .catch(err => {
+      console.log('Error ->', err);
+    });
     this.setBoard();
   }
 

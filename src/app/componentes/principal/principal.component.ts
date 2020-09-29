@@ -15,9 +15,9 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit() {
     this.auth.user.subscribe(x =>{
-      // console.log(x);
       this.logged = x;
-    })
+      console.log(x);
+    });
   }
 
  checkSidenav(sidenav){

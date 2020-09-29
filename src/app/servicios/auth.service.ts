@@ -21,7 +21,7 @@ export class AuthService {
     this.user = this.fauth.authState.pipe(
       switchMap(user => {
         if(user){
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+          return this.afs.doc<User>(`jugadores/${user.uid}`).valueChanges();
         }
         return of(null);
       })
@@ -70,8 +70,8 @@ export class AuthService {
   }
 
   private updateUserData(user:User){
-    var users = "users";
-    const userRef:AngularFirestoreDocument<User> = this.afs.doc(users + `/${user.uid}`);
+    var base = "jugadores";
+    const userRef:AngularFirestoreDocument<User> = this.afs.doc(base + `/${user.uid}`);
     const data = {
       uid:user.uid,
       email:user.email,
@@ -82,10 +82,10 @@ export class AuthService {
     return userRef.set(data, { merge:true });
   }
 
-  private insertData(user:User){
-    return this.afs.collection('users').add({
-      email: user.email,
-      uid: user.uid
-    });
-  }
+  // private insertData(user:User){
+  //   return this.afs.collection('jugadores').add({
+  //     email: user.email,
+  //     uid: user.uid
+  //   });
+  // }
 }

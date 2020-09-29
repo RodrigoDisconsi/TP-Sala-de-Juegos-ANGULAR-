@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { JugadoresService } from '../../servicios/jugadores.service';
+import { JuegoServiceService } from '../../servicios/juego-service.service';
+
+
 @Component({
   selector: 'app-jugadores-listado',
   templateUrl: './jugadores-listado.component.html',
@@ -7,41 +9,31 @@ import { JugadoresService } from '../../servicios/jugadores.service';
 })
 export class JugadoresListadoComponent implements OnInit {
 
-  listado:any
-  miJugadoresServicio:JugadoresService
+    public dataSource:any;
+    public displayedColumns:string[];
   
-    constructor(serviceJugadores:JugadoresService) {
-      this.miJugadoresServicio = serviceJugadores;
-      
+  
+    constructor(private serviceJugadores:JuegoServiceService) {
+      this.displayedColumns = ['Email', 'Username', 'Ingreso'];
     }
     
 
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.traerTodos();
   }
 
 
-  TraerTodos(){
-    //alert("totos");
-    // this.miJugadoresServicio.traertodos('jugadores/','todos').then(data=>{
-    //   //console.info("jugadores listado",(data));
-    //   this.listado= data;
-
-    // })
+  traerTodos(){
+    this.serviceJugadores.get('jugadores').subscribe(x =>{
+      this.dataSource = x;
+      console.log(x);
+      this.dataSource.forEach(element => {
+        let date = new Date(1601317442 * 1000).toISOString();
+        element.fechaAcceso = date;
+      });
+    });
   }
-  TraerGanadores(){
-    // this.miJugadoresServicio.traertodos('jugadores/','ganadores').then(data=>{
-    //   //console.info("jugadores listado",(data));
-    //   this.listado= data;
 
-    // })
-  }
-  TraerPerdedores(){
-    // this.miJugadoresServicio.traertodos('jugadores/','perdedores').then(data=>{
-    //   //console.info("jugadores listado",(data));
-    //   this.listado= data;
-
-    // })
-  }
 
 }

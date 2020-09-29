@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -30,7 +31,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatGridListModule,
     MatProgressSpinnerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule
   ],
   exports: [
     MatToolbarModule,
@@ -45,7 +47,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDividerModule,
     MatGridListModule,
     MatProgressSpinnerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule
   ],
   providers: [ ]
 })

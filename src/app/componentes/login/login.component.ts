@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import {Subscription} from "rxjs";
-import {TimerObservable} from "rxjs/observable/TimerObservable";
 import { AuthService } from '../../servicios/auth.service';
 
 @Component({
@@ -28,14 +26,13 @@ export class LoginComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    // console.log(this.loginForm.get('username').value);
-  }
+  ngOnInit() {}
 
   async onLogin(){
     this.cargando = true;
     try{
       const user = await this.auth.login(this.loginForm.value.username, this.loginForm.value.password);
+      console.log(user);
       if(user){
         this.router.navigateByUrl("");
       }
