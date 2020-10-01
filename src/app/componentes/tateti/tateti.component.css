@@ -13,7 +13,7 @@ h1{
 } */
 
 mat-grid-list{
-    width: 50%;
+    width: 40%;
     padding-bottom: 0 !important;
 }
 
@@ -69,12 +69,12 @@ mat-grid-list{
 
 .circulo {
     background-image: url("../../../assets/imagenes/circulo.png");
-    background-size: 300px 210px;
+    background-size: 240px 170px;
     background-repeat: no-repeat;
 }
 
 .cruz {
     background-image: url("../../../assets/imagenes/cruz.png");
-    background-size: 300px 210px;
+    background-size: 240px 170px;
     background-repeat: no-repeat;
 }

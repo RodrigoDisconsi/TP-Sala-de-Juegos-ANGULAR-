@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -14,7 +15,9 @@ export class AnagramaComponent implements OnInit {
   public mensaje:string;
   public intentos:number;
 
-  constructor() { }
+  constructor(
+    private juegoService: JuegoServiceService
+  ) { }
 
   ngOnInit() {
     this.iniciar();
@@ -46,17 +49,17 @@ export class AnagramaComponent implements OnInit {
 
     onJugar(){
       if(this.palabraJugador.toLowerCase() == this.palabraSecreta.toLowerCase()){
-        this.mensaje = "GANOO";
+        this.mensaje = "GANO";
         this.reniciar();
       }
       else{
         this.intentos--;
         if(this.intentos == 0){
-          this.mensaje ="PERDISTE";
+          this.mensaje ="PERDIO";
           this.reniciar();
         }
         else{
-          this.mensaje = "Le quedan: "+this.intentos +" intentos";
+          this.mensaje = "Le quedan: " + this.intentos + " intentos";
         }
       }
       console.log(this.mensaje);
@@ -65,6 +68,16 @@ export class AnagramaComponent implements OnInit {
     reniciar(){
       setTimeout(() =>{
         this.palabraJugador = null;
+        this.juegoService.setResult({
+          juego: 'Anagrama',
+          puntaje: this.mensaje
+        })
+        .then(result => {
+          console.log(result);
+        })
+        .catch(err => {
+          console.log('Error ->', err);
+        });
         this.mensaje = null;
         this.iniciar();
       }, 2000);

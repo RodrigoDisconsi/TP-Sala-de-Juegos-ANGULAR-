@@ -3,7 +3,7 @@
     <!-- <div class="field" style="width: 100%">
         <button mat-raised-button color="accent" class="start-game-button">Comenzar</button>
     </div> -->
-
+    <h1 class="mat-display-1" style="font-weight: 900; text-align: center; color: white">{{mensaje}}</h1>
     <div class="field">
         <mat-grid-list cols="3" rowHeight="1:0.7">
             <mat-grid-tile class="col1" [ngClass]="{circulo: casilleros[0] == 'o', cruz: casilleros[0] == 'x'}" (click)="jugar(0)">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -12,7 +13,9 @@ export class PiedraPapelTijeraComponent implements OnInit {
   public mensaje:string;
   public tipoPc:string;
 
-  constructor() { }
+  constructor(
+    private juegoService: JuegoServiceService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -25,15 +28,25 @@ export class PiedraPapelTijeraComponent implements OnInit {
   }
 
   resultado(){
-    if((this.tipo == "piedra" && this.tipoPc == "papel") || (this.tipo == "papel" && this.tipoPc == "piedra") || (this.tipo == "tijera" && this.tipoPc == "papel")){
-      this.mensaje = "GANASTE";
+    if((this.tipo == "piedra" && this.tipoPc == "tijera") || (this.tipo == "papel" && this.tipoPc == "piedra") || (this.tipo == "tijera" && this.tipoPc == "papel")){
+      this.mensaje = "GANO";
     }
     else if (this.tipo == this.tipoPc){
       this.mensaje = "EMPATE";
     }
     else{
-      this.mensaje = "PERDISTE";
+      this.mensaje = "PERDIO";
     }
+    this.juegoService.setResult({
+      juego: 'Piedra Papel Tijera',
+      puntaje: this.mensaje
+    })
+    .then(result => {
+      console.log(result);
+    })
+    .catch(err => {
+      console.log('Error ->', err);
+    });
     this.limpiar();
     this.jugo = false;
   }

@@ -3,7 +3,7 @@
     <div *ngIf="!comenzo" class="field">
         <button class="btn-empezar" mat-raised-button color="accent" (click)="empezar()">Empezar</button>
     </div>
-    <h1 *ngIf="comenzo" class="mat-display-1" style="font-weight: 900; text-align: center; color: white">{{mensaje}}</h1>
+    <h1 class="mat-display-1" style="font-weight: 900; text-align: center; color: white">{{mensaje}}</h1>
     <div *ngIf="reiniciar" class="field">
         <button class="btn-empezar" mat-raised-button color="accent" (click)="onReiniciar()">Reiniciar</button>
     </div>

@@ -27,9 +27,8 @@ export class JugadoresListadoComponent implements OnInit {
   traerTodos(){
     this.serviceJugadores.get('jugadores').subscribe(x =>{
       this.dataSource = x;
-      console.log(x);
       this.dataSource.forEach(element => {
-        let date = new Date(1601317442 * 1000).toISOString();
+        let date = new Date(element.fechaAcceso.seconds * 1000).toISOString();
         element.fechaAcceso = date;
       });
     });

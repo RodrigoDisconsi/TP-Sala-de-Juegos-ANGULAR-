@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-tateti',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TatetiComponent implements OnInit {
 
+  mensaje:string;
   comenzar:boolean = false;
   casilleros: any;
 
-  constructor() { 
+  constructor(
+    private juegoService: JuegoServiceService
+  ) { 
     this.casilleros = new Array(9);
   }
 
@@ -21,15 +25,15 @@ export class TatetiComponent implements OnInit {
     if(!this.casilleros[numeroCasillero]){
       this.casilleros[numeroCasillero] = "x";
       if(this.gano("x")){
-        console.log("GANASTE");
+        this.mensaje = "GANO";
         this.reiniciar();
       }
       else if(this.gano("o")){
-        console.log("PERDISTE PETE");
+        this.mensaje = "PERDIO"!;
         this.reiniciar();
       }
       else if(this.empate()){
-        console.log("EMPATASTE CONTRA LA MÁQUINA PETARDO");
+        this.mensaje = "EMPATATE";
         this.reiniciar();
       }
       else{
@@ -39,7 +43,20 @@ export class TatetiComponent implements OnInit {
   }
 
   reiniciar(){
-    this.casilleros = new Array(9);
+    setTimeout(() => {
+      this.casilleros = new Array(9);
+      this.juegoService.setResult({
+        juego: 'TaTeTi',
+        puntaje: this.mensaje 
+      })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log('Error ->', err);
+      });
+      this.mensaje = "";
+    }, 500);
   }
 
   empate():boolean{

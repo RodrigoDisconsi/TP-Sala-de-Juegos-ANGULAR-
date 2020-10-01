@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-memotest',
@@ -20,7 +20,9 @@ export class MemotestComponent implements OnInit {
   public reiniciar:boolean;
   public fallos:number;
 
-  constructor() { }
+  constructor(
+    private juegoService: JuegoServiceService
+  ) { }
 
   ngOnInit(): void {
     this.comenzarJuego();
@@ -64,7 +66,17 @@ export class MemotestComponent implements OnInit {
       this.indexAux = index;
     }
     if(this.verificarGano()){
-      this.mensaje = "GANASTEE!";
+      this.mensaje = "GANO CON " + this.fallos + " FALLOS";
+      this.juegoService.setResult({
+        juego: 'MemoTest',
+        puntaje: this.mensaje
+      })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log('Error ->', err);
+      });
       this.reiniciar = true;
     }
   }

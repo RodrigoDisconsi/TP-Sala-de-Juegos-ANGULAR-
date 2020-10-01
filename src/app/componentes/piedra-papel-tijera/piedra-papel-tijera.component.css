@@ -59,3 +59,7 @@ h1{
     margin-bottom: 4vh;
     margin-left: -15vh;
 }
+
+.btn{
+    border: 1px solid white;
+}

@@ -1,6 +1,6 @@
 
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
-import { JuegoAdivina } from '../../clases/juego-adivina'
+import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
   selector: 'app-adivina-el-numero',
@@ -16,14 +16,16 @@ export class AdivinaElNumeroComponent implements OnInit {
   public termino:boolean = false;
   public deshabilitar:boolean = false;
  
-  constructor() { 
+  constructor(
+    private juegoService: JuegoServiceService
+  ) { 
     this.comenzarJuego();
     console.log(this.numeroAleatorio);
   }
 
   comenzarJuego(){
     this.numeroAleatorio = this.generarnumero();
-    this.intentos = 5;
+    this.intentos = 8;
   }
 
 
@@ -45,7 +47,17 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.intentos--;  
     }
     else{
-      this.terminarJuego("GANASTE!");
+      this.terminarJuego("GANO CON " + this.intentos + " INTENTOS");
+      this.juegoService.setResult({
+        juego: 'Adivina el número',
+        puntaje: this.mensaje
+      })
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log('Error ->', err);
+      });
     }
   }
 
@@ -61,6 +73,16 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.mensaje = "";
       if(this.intentos == 0){
         this.terminarJuego("PERDISTE!!! El número secreto era: " + this.numeroAleatorio);
+        this.juegoService.setResult({
+          juego: 'Adivina el número',
+          puntaje: "PERDIO"
+        })
+        .then(result => {
+          console.log(result);
+        })
+        .catch(err => {
+          console.log('Error ->', err);
+        });
       }
     }, 1000);
   }
