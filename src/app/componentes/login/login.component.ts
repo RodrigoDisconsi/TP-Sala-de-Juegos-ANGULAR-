@@ -58,4 +58,10 @@ export class LoginComponent implements OnInit {
     && !this.loginForm.get(field).valid;
   }
 
+  completarLogin(){
+    // this.loginForm.value.username = "usuario@gmail.com";
+    // this.loginForm.value.password = "123456";
+    this.loginForm.setValue({username: "usuario@gmail.com", password: "123456"});
+  }
+
 }
