@@ -23,7 +23,6 @@ export class AuthService {
       switchMap(jugador => {
         if(jugador){
           return this.afs.doc<Jugador>(`jugadores/${jugador.uid}`).valueChanges();
-          // return this.afs.collection(`jugadores/${jugador.uid}`).valueChanges();
         }
         return of(null);
       })
@@ -74,16 +73,6 @@ export class AuthService {
       console.log('Error->',error);
     }
   }
-
-  // private updateUserData(user:any){
-  //   var base = "jugadores";
-  //   const userRef:AngularFirestoreDocument<any> = this.afs.doc(base + `/${user.uid}`);
-  //   const data = {
-  //     fechaAcceso: new Date()
-  //   };
-
-  //   return userRef.set(data, { merge:true });
-  // }
 
 
 }

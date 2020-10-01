@@ -9,16 +9,18 @@ import { AuthService } from '../../servicios/auth.service';
 export class BienvenidaComponent implements OnInit {
 
   public mensaje:string;
+  public logged:boolean = false;
 
   constructor(
     private auth: AuthService
-  ) { }
+  ){ }
 
   ngOnInit(): void {
-    // this.auth.user.subscribe(jugador =>{
-    //   // this.mensaje = jugador.username; A veces me lo trae y a veces no, por eso lo saque y no entiendo el porque.
-    //   // console.log(jugador);
-    // });
+    this.auth.user.subscribe(jugador =>{
+      if(jugador){
+        this.logged = true;
+      }
+    });
   }
 
 }
