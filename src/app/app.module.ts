@@ -56,6 +56,7 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
 import { MemotestComponent } from './componentes/memotest/memotest.component';
 import { SnakeComponent } from './componentes/snake/snake.component';
 import { BestScoreManagerService } from './servicios/best-score-manager.service';
+import { BienvenidaComponent } from './componentes/bienvenida/bienvenida.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { BestScoreManagerService } from './servicios/best-score-manager.service'
     TatetiComponent,
     PiedraPapelTijeraComponent,
     MemotestComponent,
-    SnakeComponent
+    SnakeComponent,
+    BienvenidaComponent
   ],
   imports: [
     BrowserModule,

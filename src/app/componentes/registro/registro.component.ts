@@ -12,9 +12,12 @@ import { AuthService } from '../../servicios/auth.service';
 })
 export class RegistroComponent implements OnInit {
 
-  private subscription: Subscription;
+  public cargando:boolean = false;
   public hide:boolean;
+  public mensaje:string;
+
   loginForm = this.fb.group({
+    email: ['', Validators.required],
     username: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
@@ -28,26 +31,26 @@ export class RegistroComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    console.log(this.loginForm.get('username').value);
-  }
+  ngOnInit() {}
 
-  async onRegister(){
+  async onRegistrar(){
+    this.cargando = true;
     try{
-      const user = await this.auth.login(this.loginForm.value.username, this.loginForm.value.password);
+      const user = await this.auth.register(this.loginForm.value.email, this.loginForm.value.password, this.loginForm.value.username);
       if(user){
-        console.log(user);
+        this.router.navigateByUrl("/Login");
       }
     }
     catch(e){
-      console.log("ERROR ->", e);
+      this.mensaje = e.message;
+      this.cargando = false;
     }
   }
 
   getErrorMessage(field:string): string{
     let retorno;
     if(this.loginForm.get(field).errors.required){
-        retorno = "Campo vacío."
+        retorno = "Campo vacío.";
     }
     else if (this.loginForm.get(field).hasError("minLength")){
       retorno = "Error. Mínimo de carácteres 6";
@@ -59,6 +62,7 @@ export class RegistroComponent implements OnInit {
     return (this.loginForm.get(field).touched || this.loginForm.get(field).dirty) 
     && !this.loginForm.get(field).valid;
   }
+
 
 
 }

@@ -16,12 +16,13 @@ export class PrincipalComponent implements OnInit {
   ngOnInit() {
     this.auth.user.subscribe(x =>{
       this.logged = x;
+      console.log(x);
     });
   }
 
  checkSidenav(sidenav){
    if(sidenav._animationState == "open"){
-     sidenav.toggle()
+     sidenav.toggle();
    }
  }
 

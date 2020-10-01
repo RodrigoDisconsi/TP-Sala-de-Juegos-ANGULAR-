@@ -5,13 +5,14 @@ import { auth, firestore } from 'firebase/app';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { Jugador } from '../clases/jugador';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  public user: Observable<User>;
+  public user: Observable<Jugador>;
 
   constructor(private fauth:AngularFireAuth, private afs: AngularFirestore) { 
     this.isLoged();
@@ -19,9 +20,10 @@ export class AuthService {
 
   isLoged(){  
     this.user = this.fauth.authState.pipe(
-      switchMap(user => {
-        if(user){
-          return this.afs.doc<User>(`jugadores/${user.uid}`).valueChanges();
+      switchMap(jugador => {
+        if(jugador){
+          return this.afs.doc<Jugador>(`jugadores/${jugador.uid}`).valueChanges();
+          // return this.afs.collection(`jugadores/${jugador.uid}`).valueChanges();
         }
         return of(null);
       })
@@ -37,9 +39,15 @@ export class AuthService {
     }
   }
 
-  async register(email:string, password:string): Promise<User>{
+  async register(email:string, password:string, username:string): Promise<User>{
     try{
       const { user } = await this.fauth.createUserWithEmailAndPassword(email,password);
+      await this.afs.collection('jugadores').add({
+        email: user.email,
+        uid: user.uid,
+        username: username,
+        fechaAcceso: Date.now()
+      });
       return user;
     }
     catch(error){
@@ -50,7 +58,6 @@ export class AuthService {
   async login(email:string, password:string): Promise<User>{
     try{  
         const { user } = await this.fauth.signInWithEmailAndPassword(email,password);
-        this.updateUserData(user);
         return user;
     }
     catch (error){
@@ -61,7 +68,6 @@ export class AuthService {
   async loginGoogle(): Promise<User>{
     try{
       const { user } = await this.fauth.signInWithPopup(new auth.GoogleAuthProvider());
-      this.updateUserData(user);
       return user;
     }
     catch (error){
@@ -69,23 +75,15 @@ export class AuthService {
     }
   }
 
-  private updateUserData(user:User){
-    var base = "jugadores";
-    const userRef:AngularFirestoreDocument<User> = this.afs.doc(base + `/${user.uid}`);
-    const data = {
-      uid:user.uid,
-      email:user.email,
-      emailVerified: user.emailVerified,
-      fechaAcceso: firestore.Timestamp.fromDate(new Date())
-    };
+  // private updateUserData(user:any){
+  //   var base = "jugadores";
+  //   const userRef:AngularFirestoreDocument<any> = this.afs.doc(base + `/${user.uid}`);
+  //   const data = {
+  //     fechaAcceso: new Date()
+  //   };
 
-    return userRef.set(data, { merge:true });
-  }
-
-  // private insertData(user:User){
-  //   return this.afs.collection('jugadores').add({
-  //     email: user.email,
-  //     uid: user.uid
-  //   });
+  //   return userRef.set(data, { merge:true });
   // }
+
+
 }

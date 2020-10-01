@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
     this.cargando = true;
     try{
       const user = await this.auth.login(this.loginForm.value.username, this.loginForm.value.password);
-      console.log(user);
       if(user){
         this.router.navigateByUrl("");
       }
@@ -59,8 +58,6 @@ export class LoginComponent implements OnInit {
   }
 
   completarLogin(){
-    // this.loginForm.value.username = "usuario@gmail.com";
-    // this.loginForm.value.password = "123456";
     this.loginForm.setValue({username: "usuario@gmail.com", password: "123456"});
   }
 

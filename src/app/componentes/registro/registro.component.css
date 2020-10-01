@@ -1,72 +1,18 @@
-/* 
-form {
-    border: 10px solid #f1f1f1;
-    padding: 10px;
-    background:gray;
+.btn-submit{
+    margin-top: 1vh;
 }
 
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+mat-form-field{
     width: 100%;
 }
 
-button:hover {
-    opacity: 0.8;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-.aceptbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #3664F4;
-}
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-/* @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-} */ 
 h1{
     text-align: center;
 }
@@ -81,29 +27,6 @@ mat-card{
     justify-content: center;
 }
 
-mat-form-field{
-    width: 100%;
-}
-
 button{
     width: 100%;
 }
-
-.cont{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1vh;
-}
-
-.btn-submit{
-    margin-top: 1vh;
-}
-
-
-/* input:focus{
-    outline: none !important;
-}
-
-mat-form-field:focus{
-    outline: none !important;
-} */

@@ -19,10 +19,11 @@ import{ PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/pi
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 import { MemotestComponent } from '../componentes/memotest/memotest.component';
 import { SnakeComponent } from '../componentes/snake/snake.component';
+import { BienvenidaComponent } from '../componentes/bienvenida/bienvenida.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
-{path: '' , component: PrincipalComponent},
+{path: '' , component: BienvenidaComponent},
 {path: 'Jugadores' , component: JugadoresListadoComponent},
 {path: 'Login' , component: LoginComponent},
 {path: 'Mapa' , component: MapaDeGoogleComponent},

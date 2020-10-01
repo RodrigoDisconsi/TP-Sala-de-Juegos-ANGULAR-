@@ -14,7 +14,7 @@ export class JugadoresListadoComponent implements OnInit {
   
   
     constructor(private serviceJugadores:JuegoServiceService) {
-      this.displayedColumns = ['Email', 'Username', 'Ingreso'];
+      this.displayedColumns = ['Email', 'Username'];
     }
     
 
@@ -27,10 +27,6 @@ export class JugadoresListadoComponent implements OnInit {
   traerTodos(){
     this.serviceJugadores.get('jugadores').subscribe(x =>{
       this.dataSource = x;
-      this.dataSource.forEach(element => {
-        let date = new Date(element.fechaAcceso.seconds * 1000).toISOString();
-        element.fechaAcceso = date;
-      });
     });
   }
 

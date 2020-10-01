@@ -19,6 +19,7 @@ span{
 mat-sidenav{
     width: 30vh;
     background-color: #3f51b5;
+    height: auto;
 }
 
 h2{

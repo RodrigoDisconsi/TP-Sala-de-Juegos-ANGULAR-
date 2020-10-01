@@ -50,7 +50,7 @@
         </button>
         <mat-menu #menu="matMenu">
           <button *ngIf="!logged" [routerLink]="['/Login']" mat-menu-item>Login</button>
-          <button *ngIf="logged" mat-menu-item (click)="onLogout()">Logout</button>
+          <button *ngIf="logged" mat-menu-item (click)="onLogout()" [routerLink]="['/Login']" routerLinkActive="router-link-active" >Logout</button>
         </mat-menu>
       </mat-toolbar>
       <br>
